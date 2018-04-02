@@ -153,7 +153,7 @@ ubt ()	{
 	# Creating user with username from $usrn and asking user to set a password
 	htpasswd -c /etc/squid/passwd $usrn
 	# Downloading Squid configuration
-	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/zgayjjf/squid-proxy-installer/master/spi-ubuntu.conf --no-check-certificate
+	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/zgayjjf/spi/master/spi-ubuntu.conf --no-check-certificate
 	# Copying squid3.conf from init to init.d for startup script
 	cp /etc/init/squid.conf /etc/init.d/squid
 	# Creating empty blacklist.acl file for further blacklisting entries
