@@ -154,12 +154,10 @@ ubt ()	{
 	htpasswd -c /etc/squid/passwd $usrn
 	# Downloading Squid configuration
 	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/zgayjjf/spi/master/spi-ubuntu.conf --no-check-certificate
-	# Copying squid3.conf from init to init.d for startup script
-	cp /etc/init/squid.conf /etc/init.d/squid
 	# Creating empty blacklist.acl file for further blacklisting entries
 	touch /etc/squid/blacklist.acl	
 	# Restarting Squid and enabling its service
-	service squid restart && update-rc.d squid defaults
+	systemctl restart squid && systemctl enable squid
 	# Running function firew2
 	firew2
 }
