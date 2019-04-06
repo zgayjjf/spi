@@ -93,7 +93,7 @@ rhel7 ()	{
 	# Creating user with username from $usrn and asking user to set a password
 	htpasswd -c /etc/squid/passwd $usrn
 	# Downloading Squid configuration 
-	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/hidden-refuge/squid-proxy-installer/master/spi-rhel7.conf --no-check-certificate
+	wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/zgayjjf/spi/master/spi-rhel7.conf --no-check-certificate
 	# Creating empty blacklist.acl file for further blacklisting entries
 	touch /etc/squid/blacklist.acl
 	# Restarting Squid and enabling its service
